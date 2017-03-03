@@ -14,8 +14,14 @@ module.exports = {
             {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
                 loader: 'file?name=public/fonts/[name].[ext]'
-            }
+            },
+            { test: /\.(png|jpg)$/, loader: 'file-loader?name=public/images/[name].[ext]' },
         ]
+    },
+    output: {
+        path: path.build,
+        filename: 'app.bundle.js',
+        publicPath: path.build
     },
     plugins: [
         // Injects bundles in your index.html instead of wiring all manually.

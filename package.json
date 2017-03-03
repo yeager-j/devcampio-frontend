@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "angular": "^1.5.0",
+    "angular-cookies": "^1.6.2",
     "angular-ui-router": "^1.0.0-beta.1",
     "materialize-css": "^0.98.0",
     "normalize.css": "^3.0.3"
@@ -30,6 +31,7 @@
     "gulp-template": "^3.0.0",
     "gulp-util": "^3.0.7",
     "html-webpack-plugin": "^1.7.0",
+    "image-webpack-loader": "^3.2.0",
     "karma": "^0.13.22",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.2.0",

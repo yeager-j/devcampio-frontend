@@ -1,10 +1,27 @@
 <div class="navbar-fixed">
     <nav class="light-blue">
         <div class="nav-wrapper container">
-            <a ui-sref="home" class="brand-logo">Devcamp.io</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+            <a ui-sref="home" class="brand-logo">devcamp.io</a>
+
+            <!--Shown if logged in -->
+            <ul class="right hide-on-med-and-down" ng-show="vm.auth.isLoggedIn()">
+                <li ui-sref-active="active">
+                    <a ui-sref="profile" id="profile">
+                        <i class="material-icons left">person</i>
+                        <span ng-bind="vm.auth.token"></span>
+                    </a>
+                </li>
+                <li><a ng-click="vm.auth.logout()">Logout</a></li>
+            </ul>
+
+            <!--Hidden if logged in-->
+            <ul class="right hide-on-med-and-down" ng-hide="vm.auth.isLoggedIn()">
                 <li ui-sref-active="active"><a ui-sref="login">Login</a></li>
+            </ul>
+
+            <!--Main navigation-->
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li ui-sref-active="active" id="home"><a ui-sref="home">Home</a></li>
             </ul>
         </div>
     </nav>
