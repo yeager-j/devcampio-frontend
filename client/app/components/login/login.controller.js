@@ -1,5 +1,7 @@
 class LoginController {
     constructor(auth, $state) {
+        "ngInject";
+
         this.name = 'login';
         this.auth = auth;
         this.$state = $state;
@@ -14,7 +16,5 @@ class LoginController {
         this.$state.transitionTo('home');
     }
 }
-
-LoginController.$inject = ['auth', '$state'];
 
 export default LoginController;

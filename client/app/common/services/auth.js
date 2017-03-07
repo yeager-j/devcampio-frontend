@@ -1,5 +1,7 @@
 export default class AuthenticationService {
     constructor($http, $cookies) {
+        "ngInject";
+
         this.$http = $http;
         this.$cookies = $cookies;
     }
@@ -10,6 +12,14 @@ export default class AuthenticationService {
 
     logout() {
         this.$cookies.remove('token');
+    }
+
+    register(data) {
+        return this.$http({
+            method: 'POST',
+            url: 'http://localhost:4000/api/register',
+            data: data
+        });
     }
 
     isLoggedIn() {
@@ -24,5 +34,3 @@ export default class AuthenticationService {
         this.$cookies.put('token', id);
     }
 }
-
-AuthenticationService.$inject = ['$http', '$cookies'];

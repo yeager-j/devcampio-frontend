@@ -1,0 +1,54 @@
+<div class="register">
+    <div class="card grey lighten-5">
+        <div class="card-content">
+            <span class="card-title center-align">Register</span>
+            <div class="row">
+                <div class="col s6" input-field="">
+                    <input id="username" type="text" class="validate" ng-model="vm.user.username">
+                    <label for="username">Username</label>
+                </div>
+                <div class="col s6" input-field="">
+                    <input id="email" type="email" class="validate" ng-model="vm.user.email">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6" input-field>
+                    <select id="state" ng-model="vm.user.state" watch material-select>
+                        <option value="{{ state.abbrev }}" ng-repeat="state in vm.states">{{ state.abbrev }}</option>
+                    </select>
+                    <label for="state">Your State</label>
+                </div>
+                <div class="col s6" input-field>
+                    <select id="student_type" ng-model="vm.user.type" watch material-select>
+                        <option value="{{ $index }}" ng-repeat="type in vm.types track by $index">{{ type.text }}</option>
+                    </select>
+                    <label for="student_type">Who Are You?</label>
+                    <p class="small">{{ vm.user.userDesc }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6" input-field="">
+                    <input id="password" type="password" class="validate" ng-model="vm.user.password">
+                    <label for="password">Password</label>
+                </div>
+                <div class="col s6" input-field="">
+                    <input id="confirm_password" type="password" class="validate" ng-model="vm.user.confirm_password">
+                    <label for="confirm_password">Confirm Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <button ng-click="vm.register()" class="btn waves-light waves-effect">Register</button>
+                </div>
+                <div class="col s6 right-align">
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="center-align">
+        <a ui-sref="login" class="btn waves-effect waves-light">Login</a>
+    </div>
+</div>

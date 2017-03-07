@@ -36,3 +36,30 @@
   }
 }
 
+.section-wrapper {
+  width: 100%;
+  padding: 70px 150px;
+
+  &.section-white {
+    background-color: white;
+  }
+
+  &.section-dark {
+    background-color: #444;
+    color: white;
+  }
+
+  .section {
+    min-height: 200px;
+    text-align: center;
+
+    hr {
+      width: 50%;
+    }
+
+    .row {
+      margin-top: 25px;
+    }
+  }
+}
+
